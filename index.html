@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./common.js" defer></script>
+  </head>
+  <body>
+    <!-- 모달 -->
+    <div class="backdrop" id="backdrop">
+      <div class="modal" id="modal">
+        <img src="./img/Close.png" alt="닫기" class="close" id="close" />
+        <!-- <div class="imgCon">
+          <img
+            src="https://www.sac.or.kr/site/main/file/image/uu/7f0ed7752c7e41b98d4446c7b75c4673"
+            alt="포스터"
+          />
+        </div>
+        <div class="detailCon">
+          <div class="detailOptions">
+            <span class="detailText">제목</span>
+            <span class="detailText">줄거리</span>
+            <span class="detailText">등장인물</span>
+            <span class="detailText">장르</span>
+            <span class="detailText">개봉일자</span>
+          </div>
+          <div class="detailOptions">
+            <span class="detailText" n>바다의 왕자</span>
+            <span class="detailText">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              sit labore commodi saepe, soluta ipsa, unde, nulla nobis ipsam
+              quibusdam iusto. Velit dignissimos, modi at exercitationem eius
+              cum eveniet veniam!
+            </span>
+            <span class="detailText"></span>
+            <span class="detailText">로멘틱, 코미디</span>
+            <span class="detailText">2024-07-24</span>
+          </div>
+        </div>
+
+        <button>홈페이지 이동</button> -->
+      </div>
+    </div>
+
+    <header>
+      <nav>
+        <div class="logo" id="logo">
+          <img src="./img/Logo.png" alt="로고" />
+        </div>
+        <ul class="navCategory" id="navCategory">
+          <li class="on" id="toprated">Top Rated</li>
+          <li id="upcoming">Upcoming</li>
+          <li id="nowplaying">Now Playing</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="search">
+        <div class="inputCon">
+          <input
+            id="inputText"
+            type="text"
+            placeholder="검색어를 입력하세요"
+            value=""
+          />
+          <div class="searchIcon" id="searchIcon">
+            <img src="./img/Search.png" alt="검색" />
+          </div>
+        </div>
+      </div>
+
+      <ul class="concertContainer" id="concertContainer">
+        <!-- <li class="card">
+          <div class="imgCon">
+            <img
+              src="https://www.sac.or.kr/site/main/file/image/uu/7f0ed7752c7e41b98d4446c7b75c4673"
+              alt="대표 이미지"
+            />
+          </div>
+          <p class="title">콘서트홀</p>
+          <div class="rating">
+            <div>
+              <img src="./img/Star.png" alt="별" />
+            </div>
+            8.542
+          </div>
+          <p>2024.10.03 ~ 2024.12.20</p>
+        </li> -->
+      </ul>
+
+      <!-- 페이지네이션 -->
+      <div class="pageCon" id="pageCon">
+        <button id="firstPage">맨 앞</button>
+        <button id="prevPage">이전</button>
+        <div class="pageNumCon" id="pageNumCon">
+          <!-- <button class="on">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button> -->
+        </div>
+        <button id="nextPage">다음</button>
+        <button id="lastPage">맨 뒤</button>
+      </div>
+    </main>
+  </body>
+</html>
