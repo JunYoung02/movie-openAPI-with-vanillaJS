@@ -45,6 +45,6 @@ npm install
 MOVIE_API_KEY=""
 ```
 **4. Run**
-```
+```bash
 node server.js
 ```
