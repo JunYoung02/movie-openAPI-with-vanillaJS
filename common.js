@@ -73,6 +73,7 @@ const postModal = (data, credits, videos) => {
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+  overflow-y:auto;
   `;
   $modalInfo.innerHTML = `
   <div class="infoCon">
@@ -82,95 +83,61 @@ const postModal = (data, credits, videos) => {
         alt="포스터"
       />
     </div>
-    <div class="detailCon">
-      <div class="detailOptions">
-        <span class="detailText">제목</span>
-        <span class="detailText">장르</span>
-        <span class="detailText">개봉일자</span>
-        <span class="detailText">등장인물</span>
+    <div class="rightSide">
+      <div class="detailCon">
+        <div class="detailOptions">
+          <span class="detailText title">제목</span>
+          <span class="detailText title">장르</span>
+          <span class="detailText title">개봉일자</span>
+        </div>
+        <div class="detailOptions">
+          <span class="detailText">${data.title}</span>
+          <span class="detailText">${genres}</span>
+          <span class="detailText">${data.release_date}</span>
+        </div>
       </div>
-      <div class="detailOptions">
-        <span class="detailText">${data.title}</span>
-        <span class="detailText">${genres}</span>
-        <span class="detailText">${data.release_date}</span>
-        <span class="detailText">
-          <div class="actorInfo">
-            <div class="actorImg">
-              <img src=https://image.tmdb.org/t/p/original${actors[0].profileImg} alt="배우 이미지"/>
-            </div>
-            <p class="characterName">${actors[0].character}</p>
-            <p class="actorName">${actors[0].original_name}</p>
-          </div>
 
-          <div class="actorInfo">
-            <div class="actorImg">
-              <img src=https://image.tmdb.org/t/p/original${actors[1].profileImg} alt="배우 이미지"/>
-            </div>
-            <p class="characterName">${actors[1].character}</p>
-            <p class="actorName">${actors[1].original_name}</p>
+      <p class="titleActor">등장인물</p>
+      <div class="actorCon">
+        <div class="actorInfo">
+          <div class="actorImg">
+            <img src=https://image.tmdb.org/t/p/original${actors[0].profileImg} alt="배우 이미지"/>
           </div>
-        </span>
+          <p class="characterName">${actors[0].character}</p>
+          <p class="actorName">${actors[0].original_name}</p>
+        </div>
+        
+        <div class="actorInfo">
+          <div class="actorImg">
+            <img src=https://image.tmdb.org/t/p/original${actors[1].profileImg} alt="배우 이미지"/>
+          </div>
+        <p class="characterName">${actors[1].character}</p>
+          <p class="actorName">${actors[1].original_name}</p>
+        </div>
+
+        <div class="actorInfo">
+          <div class="actorImg">
+            <img src=https://image.tmdb.org/t/p/original${actors[2].profileImg} alt="배우 이미지"/>
+          </div>
+          <p class="characterName">${actors[2].character}</p>
+          <p class="actorName">${actors[2].original_name}</p>
+        </div>
+      </div>
+
+
+      <div class="story">
+      <span class="option" id="storyText">줄거리</span>
+      <p class="toggleOff" id="overview">${data.overview}</p>
+      </div>
+      
+      <div class="movie">
+        <p id="storyMovie" class="storyMovie">예고편</p>
+        <iframe id="video" width:500px height:'300px' class="toggleOff" src="https://www.youtube.com/embed/${videoKey}" controls ></iframe>
       </div>
     </div>
   </div>
-
-  <div class="story">
-    <span class="option" id="storyText">▶️줄거리</span>
-    <p class="toggleOff" id="overview">${data.overview}</p>
-  </div>
-
-  <div class="movie">
-    <p id="storyMovie" class="storyMovie">▶️예고편</p>
-    
-    <iframe id="video" width:500px height:'300px' class="toggleOff" src="https://www.youtube.com/embed/${videoKey}" controls ></iframe>
-  </div>
   `;
   $modal.appendChild($modalInfo);
-
-  // * 줄거리 / 예고편 토글
-  const $storyText = document.getElementById("storyText"); // 줄거리 text
-  const $storyMovie = document.getElementById("storyMovie"); // 예고편 text
-
-  const $story = document.getElementById("overview"); // 줄거리 내용
-  const $movie = document.getElementById("video"); // 예고편 내용
-
-  let isText = false;
-  let isMovie = false;
-  $storyText.addEventListener("click", () => {
-    if (isText) {
-      $story.classList.remove("toggleOn");
-      $story.classList.add("toggleOff");
-      isText = false;
-    } else {
-      $story.classList.remove("toggleOff");
-      $story.classList.add("toggleOn");
-      if (isMovie) {
-        $movie.classList.remove("toggleOn");
-        $movie.classList.add("toggleOff");
-        isMovie = false;
-      }
-      isText = true;
-    }
-    // console.log(isText, isMovie);
-  });
-  $storyMovie.addEventListener("click", () => {
-    if (isMovie) {
-      $movie.classList.add("toggleOff");
-      $movie.classList.remove("toggleOn");
-
-      isMovie = false;
-    } else {
-      $movie.classList.remove("toggleOff");
-      $movie.classList.add("toggleOn");
-      if (isText) {
-        $story.classList.remove("toggleOn");
-        $story.classList.add("toggleOff");
-        isText = false;
-      }
-      isMovie = true;
-    }
-    // console.log(isText, isMovie);
-  });
 };
 // * 모달 열기
 const openModal = () => {

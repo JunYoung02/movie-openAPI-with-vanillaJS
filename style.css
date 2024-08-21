@@ -28,16 +28,16 @@ li {
   visibility: hidden;
 }
 .modal {
-  width: 35em;
-  height: 45em;
-  padding: 2em 1.35em;
+  width: calc(100% - 4rem);
+  height: 80%;
+  padding: 1em 0em;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -45,25 +45,40 @@ li {
 .modal .close {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 12px;
   cursor: pointer;
 }
 .modal .infoCon {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
   gap: 15px;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .modal .imgCon {
-  width: 50%;
+  width: 55%;
 }
 .modal .imgCon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
+.modal .rightSide {
+  min-width: 350px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+/* modal detailText */
 .modal .detailCon {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 14px;
+  padding-top: 0.5em;
 }
 .modal .detailOptions {
   min-width: 4.1em;
@@ -72,26 +87,31 @@ li {
   align-items: flex-start;
   gap: 8px;
 }
+.modal .detailText.title {
+  font-weight: 800;
+}
 .modal .detailText {
   height: 2.5em;
-  font-size: 1em;
+  font-size: 1.5em;
   display: flex;
   gap: 15px;
 }
-.modal .actorInfo {
-  position: relative;
-  padding-top: 5em;
-  text-align: center;
-  font-size: 0.875em;
-  flex: 1;
+/* modal actor */
+.modal .titleActor {
+  font-size: 1.5em;
+  font-weight: 800;
 }
-.modal .actorImg {
-  position: absolute;
-  height: 5em;
-  width: 5em;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
+.modal .actorCon {
+  display: flex;
+  gap: 10px;
+}
+.modal .actorInfo {
+  text-align: center;
+  font-size: 1em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .modal .actorImg img {
   width: 100%;
@@ -104,40 +124,28 @@ li {
 .modal .actorInfo .actorName {
   color: #a7a7a7;
 }
+/* modal 줄거리 및 예고편 */
 .modal .story {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 .modal .story p {
-  font-size: 0.875em;
+  font-size: 1em;
+  line-height: 1.2em;
 }
 .modal .story .option {
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: 800;
-  cursor: pointer;
-}
-.modal .story .option:hover {
-  color: #e6002d;
 }
 .modal .movie .storyMovie {
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: 800;
-  cursor: pointer;
-}
-.modal .movie .storyMovie:hover {
-  color: #e6002d;
 }
 .modal iframe {
   width: 100%;
   height: 100%;
-}
-/* * 모달 줄거리/영상 토글 */
-.modal .toggleOff {
-  display: none;
-}
-.mdoal .toggleOn {
-  display: block;
+  min-height: 250px;
 }
 
 /* header */
@@ -166,7 +174,7 @@ nav {
   padding: 1rem;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 .navCategory li.on {
   color: #e6002d;
@@ -225,7 +233,7 @@ main {
 
 /* card */
 .concertContainer {
-  width: 100%;
+  /* width: 100%; */
   margin: 3rem 0;
   display: grid;
   place-items: center;
