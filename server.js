@@ -18,6 +18,11 @@ app.use(
 );
 const key = process.env.MOVIE_API_KEY;
 
+// 기본 경로 설정
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html")); // 기본 경로로 index.html 제공
+});
+
 // ** API 요청 엔드포인트들 설정
 // * [get] Top Rated
 app.get("/api/toprated/", async (req, res) => {
@@ -154,7 +159,7 @@ app.get("/api/search/", async (req, res) => {
 });
 
 // 서버 시작
-const PORT = `3000`;
+const port = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
