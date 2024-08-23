@@ -399,7 +399,7 @@ const pagination = () => {
 
 // HTML 읽고, DOM 트리 완성하는 순간 실행 (기본 값 top rated)
 document.addEventListener("DOMContentLoaded", () => {
-  fetch(`http://localhost:3000/api/${category}/?page=${currentPage}`)
+  fetch(`/api/${category}/?page=${currentPage}`)
     .then((response) => response.json())
     .then((data) => {
       // console.log(data);
