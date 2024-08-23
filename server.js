@@ -9,7 +9,7 @@ env.config({ path: ".env" }); // .env 파일에서 환경 변수를 로드
 const app = express();
 
 // 정적 파일 서빙 (index.html, common.js)
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "public")));
 
 // cors 오류 설정
 app.use(
