@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const env = require("dotenv");
 const cors = require("cors");
+const path = require("path");
 
 env.config({ path: ".env" }); // .env 파일에서 환경 변수를 로드
 
