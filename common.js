@@ -21,9 +21,7 @@ const searchApiCall = (searchValue) => {
     getData(category);
     return;
   }
-  fetch(
-    `http://localhost:3000/api/search/?title=${searchValue}&page=${currentPage}`
-  )
+  fetch(`/api/search/?title=${searchValue}&page=${currentPage}`)
     .then((response) => response.json())
     .then((data) => {
       // console.log(data);
@@ -170,7 +168,7 @@ $concertUl.addEventListener("click", async (e) => {
     let detail, credits, videos;
     // console.log(selectCard.id);
     // details
-    await fetch(`http://localhost:3000/api/details/?id=${selectCard.id}`)
+    await fetch(`/api/details/?id=${selectCard.id}`)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -179,7 +177,7 @@ $concertUl.addEventListener("click", async (e) => {
       .catch((error) => console.error("Error fetching movies:", error));
 
     // credits
-    await fetch(`http://localhost:3000/api/credits/?id=${selectCard.id}`)
+    await fetch(`/api/credits/?id=${selectCard.id}`)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -188,7 +186,7 @@ $concertUl.addEventListener("click", async (e) => {
       .catch((error) => console.error("Error fetching movies:", error));
 
     // videos
-    await fetch(`http://localhost:3000/api/videos/?id=${selectCard.id}`)
+    await fetch(`/api/videos/?id=${selectCard.id}`)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -215,7 +213,7 @@ $Logo.addEventListener("click", () => {
 // nav 클릭 시 li id 가져와서 post
 const getData = (id) => {
   $inputText.value = ""; // input value 초기화
-  fetch(`http://localhost:3000/api/${id}/?page=${currentPage}`)
+  fetch(`/api/${id}/?page=${currentPage}`)
     .then((response) => response.json())
     .then((data) => {
       postData(data);
@@ -320,9 +318,7 @@ $pageCon.addEventListener("click", (e) => {
       }
     }
     // console.log(currentPage);
-    fetch(
-      `http://localhost:3000/api/search/?title=${$inputText.value}&page=${currentPage}`
-    )
+    fetch(`/api/search/?title=${$inputText.value}&page=${currentPage}`)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data, currentPage);
