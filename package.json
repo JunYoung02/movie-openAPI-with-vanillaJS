@@ -10,7 +10,7 @@
     "express": "^4.21.0",
     "vercel": "^37.1.0",
     "path-to-regexp": "6.3.0",
-    "semver": "7.5.2",
+    "semver": "7.5.3",
     "micromatch": ">=4.0.8",
     "tar": ">=6.2.1",
     "debug": ">=4.3.1"
@@ -18,7 +18,7 @@
   "devDependencies": {
     "axios": "1.7.7",
     "path-to-regexp": "6.3.0",
-    "semver": "7.5.2",
+    "semver": "7.5.3",
     "micromatch": ">=4.0.8",
     "tar": ">=6.2.1",
     "debug": ">=4.3.1"
