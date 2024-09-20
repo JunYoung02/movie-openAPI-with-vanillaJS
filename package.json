@@ -12,16 +12,16 @@
     "micromatch": ">=4.0.8",
     "npm-force-resolutions": "^0.0.10",
     "path-to-regexp": "6.3.0",
-    "semver": "7.5.3",
+    "semver": "7.5.2",
     "tar": ">=6.2.1",
-    "vercel": "^37.1.0"
+    "vercel": "^37.5.2"
   },
   "devDependencies": {
     "axios": "1.7.7",
     "debug": ">=4.3.1",
     "micromatch": ">=4.0.8",
     "path-to-regexp": "6.3.0",
-    "semver": "7.5.3",
+    "semver": "7.5.2",
     "tar": ">=6.2.1"
   },
   "resolutions": {
